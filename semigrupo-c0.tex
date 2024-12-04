@@ -1,0 +1,156 @@
+\section{Semigrupos de Classe $C^0$}
+
+
+\subsection*{Definição de Semigrupo}
+\begin{frame}{Semigrupos de Classe $C^0$}
+\begin{defin}
+    Seja $X$ um espaço de Banach. Dizemos que a aplicação $S:[0,+\infty)\longrightarrow \mathcal{L}(X)$ é um {\color{blue} semigrupo de operadores limitados em X} quando:
+\begin{enumerate}
+    \item $S(0)=\operatorname{Id}$;
+    \item $S(t+s)=S(t)S(s)$, $\forall t,s\in [0,+\infty)$;
+
+Dizemos que $S$ é {\color{blue} de classe $C^0$ ou fortemente contínuo} se
+
+    \item $\lim\limits_{t\to0^+} \|(S(t)-\operatorname{Id})x\|=0$, $\forall x\in X$.
+
+Dizemos que $S$ é {\color{blue} uniformemente contínuo} se 
+
+\item $\lim\limits_{t\to 0^+}\|S(t)-\operatorname{Id}\|_{\mathcal{L}(X)}=0$.
+\end{enumerate}
+\end{defin}
+\end{frame}
+
+\begin{frame}{}
+    \begin{exe}
+        \begin{enumerate}
+            \item A exponencial $e^{tA}$, quando $A\in \mathcal{L}(X)$, é um semigrupo.
+            \item Seja $X=C_b(\R)$  o espaço das funções $f:\R\longrightarrow \R$ uniformemente contínuas e limitadas, com a norma do $\sup$. Então $S(t)f(s)=f(t+s)$ definie um semigrupo de classe $C^0$.
+        \end{enumerate}
+    \end{exe}
+
+\end{frame}
+
+\begin{frame}{}
+\begin{prop}
+    Se $S$ é um semigrupo de classe $C^0$ em X, então exite $M\geq 1$  tal que
+    \[\|S(t)\|_{\mathcal{L}(X)}\leq M,\ \forall t\in [0,T].\]
+\end{prop}
+\begin{corol}
+Todo semigrupo de classe $C^0$ é fortemente contínuo em $[0,+\infty)$, i.e., 
+para todo $x\in X$, 
+\begin{center}
+$t\in [0,+\infty)\longmapsto S(\cdot)x\in  X$ é contínua.
+\end{center}
+\end{corol}
+\end{frame}
+
+\subsection*{Semigrupo das contrações}
+\begin{frame}{}
+\begin{teo}
+Seja $S$ um semigrupo de classe $C^0$ em $X$. Então,
+\[\lim\limits_{t\to +\infty}\frac{\log(\|S(t)\|)}{t}=\inf\limits_{t>0}\frac{\log(\|S(t)\|)}{t}=\omega_0\]
+e para cada ${\color{red}\omega}>\omega_0$, existe {\color{red}$M\geq 1$} tal que 
+\begin{equation*}
+{\color{red}\|S(t)\|\leq Me^{\omega t}, t\geq 0.}
+\end{equation*}
+\end{teo} 
+Quando $\omega_0<0$, então para $\omega=0$, temos que 
+\[\|S(t)\|\leq M,\ \forall t\geq 0. \]
+Neste caso, dizemos que $S$ é um {\color{blue} semigrupo uniformemente limitado}. Se, além disso, $M=1$, $S$ é dito {\color{blue} semigrupo das contrações}.
+
+\end{frame}
+
+\begin{frame}{ }
+\begin{lema}
+    Seja $p:[0,+\infty)\longrightarrow \R$ uma função {\color{blue}subaditiva}, isto é, $p(t+s)\leq p(t)+p(s)$. Se $p$ é limitada superiormente em todo intervalo limitado, então $p(t)/t$ tem um limite quanto $t\to +\infty$ e 
+    \[\lim\limits_{t\to +\infty}\frac{p(t)}{t}=\inf\limits_{t>0}\frac{p(t)}{t}.\]
+Prova: Ver \cite[Lema 1.2.5]{alvercio} 
+\end{lema}
+\end{frame}
+
+\subsection*{Gerador Infinitesimal}
+\begin{frame}{Gerador Infinitesimal }
+
+\begin{defin}
+Seja $S$ um semigrupo de classe $C^0$ em $X$. O {\color{blue}gerador infinitesimal} de $S$ é o operador $A:D(A)\subset X\longrightarrow X$ definido por 
+\[D(A)=\left\{x\in X;\ \lim\limits_{h\to 0^+} \frac{S(h)x-x}{h} \text{ existe}\right\}\]
+\[Ax:=\lim\limits_{h\to 0^+} \frac{S(h)x-x}{h},\ \forall x\in D(A).\]
+\end{defin}
+\begin{prop}
+    $D(A)$ é um subespaço vetorial de $X$ e $A$ é um operador linear.
+\end{prop}
+
+\end{frame}
+
+\begin{frame}{ }
+\begin{exampleblock}{Notações}
+\begin{enumerate}
+    \item Dado $S$ é um semigrupo de classe $C^0$ em $X$, vamos designar por $A_h$ o operador linear limitado 
+    \[A_hx=\frac{S(h)x-x}{h},\ \forall x\in X.\]
+\item Escrevemos $S(t)=e^{tA}$ para dizer que $A$ é o gerador infinitesimal de um semigrupo de classe $C^0$ em $X$.
+\item Escrevemos $A\in G({\color{blue}M},{\color{red}\omega})$ para exprimir que $A$ é o gerador infinitesimal de um semigrupo de classe $C^0$, que satisfaz a condição:
+\[\|e^{tA}\|\leq {\color{blue} M}e^{{\color{red}\omega} t}, \forall t\geq 0.\]
+\end{enumerate}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{ }
+\begin{teo}
+Seja $S(t)=e^{tA}$ em $X$. Dado $x\in D(A)$, então 
+\[e^{(\cdot)A}x\in C^0([0,+\infty);D(A))\cap C^1([0,+\infty);X)\]
+e
+\[\frac{d}{dt}\left(e^{tA}x\right)=Ae^{tA}x=e^{tA}Ax.\]
+\end{teo}
+\end{frame}
+\subsection*{Existência e Unicidade I}
+\begin{frame}{ }
+\begin{exampleblock}{Existência e Unicidade de um PVI}
+Seja $S(t)=e^{tA}$ em $X$. Se {\color{red}$x_0\in D(A)$}, então $x(t)=e^{tA}x_0$ define {\color{blue}uma única solução} do PVI
+\[
+\begin{cases}
+    x'(t)=Ax,\ t\in [0,+\infty)\\
+    x(0)=x_0.
+\end{cases}
+\]
+Se {\color{red}$x_0\not\in D(A)$} em $X$, então $x(t)=e^{tA}x_0$ {\color{red}não é diferenciável}. Neste caso, dizemos que $x=x(t)$ é uma {\color{blue}solução generalizada (fraca)} do PVI.
+\end{exampleblock}
+
+\begin{exer}
+Seja $S(t)=e^{tA}$ em $X$. Se $x\in D(A)$ mostre que
+\[e^{tA}x-e^{sA}x=\int_s^t Ae^{\xi A}x\,d\xi =\int_s^t e^{\xi A}Ax\,d\xi\]
+\end{exer}
+\end{frame}
+
+\begin{frame}{ }
+\begin{prop}
+Se $S(t)=e^{tA}$ em $X$, então para todo $x\in X$, 
+\[\int_0^t e^{sA}x\,ds\in D(A)\ \text{ e }\ A\left(\int_0^t e^{sA}x\,ds\right)=e^{tA}x-x.\]
+\end{prop}
+
+\begin{prop}
+Se $S(t)=e^{tA}$ em $X$, então $A$ é fechado e seu domínio é denso em $X$.
+\end{prop}
+
+\begin{exampleblock}{}
+Esta última proposição nos dá uma condição necessária para que um operador $A$ seja o gerador infinitesimal de um semigrupo.
+\end{exampleblock}
+\begin{prop}[Unicidade]
+Se $S_1(t)=e^{tA}$ e $S_2(t)=e^{tA}$ em $X$, então $S_1=S_2$.
+\end{prop}
+\end{frame}
+
+
+\begin{frame}{ }
+\begin{defin}
+Seja $S(t)=e^{tA}$ em $X$. Defina $A^0=\operatorname{Id}$, $A^1=A$ e, supondo que $A^{n-1}$ esteja definido, vamos definir $A^n$ pondo:
+\[D(A^n)=\{x\in D(A^{n-1});\ A^{n-1}x\in D(A)\},\]
+\[A^nx=A(A^{n-1}x), \ \forall x\in D(A^{n}).\]
+\end{defin}
+\end{frame}
+
+\begin{frame}{ }
+\begin{prop}
+Seja $S(t)=e^{tA}$ em $X$. 
+\end{prop}
+
+\end{frame}

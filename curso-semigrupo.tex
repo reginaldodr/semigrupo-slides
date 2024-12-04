@@ -1,0 +1,168 @@
+\documentclass[envcountsect,aspectratio=169]{beamer}
+\usepackage{etex}
+\usefonttheme[onlymath]{serif}
+\usepackage[utf8x]{inputenc}
+\usepackage[brazilian]{babel}
+\usepackage{amsthm,amssymb}
+%\usepackage{graphicx}
+\usepackage{wrapfig}
+
+\usepackage{color}
+
+\usepackage{multicol}
+\usepackage{makecell}
+\usepackage{syntonly}
+\hypersetup{colorlinks,linkcolor=,urlcolor=blue}
+
+
+\usepackage{pgf,tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+\usetikzlibrary{decorations.pathreplacing}
+\usepackage{tkz-euclide}
+
+%---------------- tabu package 
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{tabu}
+
+%--------------------------------
+\usepackage[labelformat=empty]{caption}
+\setbeamertemplate{caption}[numbered]{}
+
+
+\usetheme{Madrid}
+
+\setbeamertemplate{theorems}[numbered]
+
+\newtheorem{nada}{Nada}
+
+
+\theoremstyle{definition}
+\newtheorem{defin}[nada]{Defini\c c\~ao}
+\newtheorem{prop}[nada]{Proposi\c c\~ao}
+
+\newtheorem{corol}[nada]{Corol\'ario}
+
+\newtheorem{teo}[nada]{Teorema}
+
+\newtheorem{lema}[nada]{Lema}
+
+
+
+\newtheorem{outline}{\timesbold outline rem proof}
+
+\newtheorem{obs}[nada]{Observação}
+\newtheorem{afir}{Afirmação}
+
+\makeatletter
+\def\th@exercicio{%
+	\normalfont % body font
+	\def\inserttheoremblockenv{alertblock}  
+}
+\theoremstyle{exercicio}
+\newtheorem*{exer}{\includegraphics[scale=0.06]{w-brainb.png} Exercício}
+\makeatother
+
+\newtheorem{casa}{\includegraphics[scale=0.035]{w-homework.png} Para Casa}
+\makeatother
+
+
+
+
+\makeatletter
+\def\th@something{%
+	\normalfont % body font
+	\def\inserttheoremblockenv{exampleblock}  
+}
+\theoremstyle{something}
+\newtheorem*{exe}{\includegraphics[scale=0.3]{exemplo.png} Exemplo }
+\makeatother
+
+%\setbeamercolor{block title}{bg=cyan, fg=white}
+
+\newtheorem*{casa-comp}{\includegraphics[scale=0.035]{w-homework-comp.png} Tarefa Computacional}
+\makeatother
+
+\makeatletter
+\def\th@resp{%
+	\normalfont % body font
+	\def\inserttheoremblockenv{block}  
+}
+\theoremstyle{resp}
+\newtheorem*{resp}{\includegraphics[scale=0.01]{White_check.png} Resposta}
+\makeatother
+
+
+\makeatletter
+\def\th@desafio{%
+	\normalfont % body font
+	\def\inserttheoremblockenv{alertblock}  
+}
+
+\theoremstyle{desafio}
+\newtheorem*{desafio}{\includegraphics[scale=0.02]{desafio-branco.png} Desafio}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\cqd}{\hfill \framebox[7pt]{} \mbox{} \medskip}
+\newcommand{\R}{\mathbb{R}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%\setbeamercovered{transparent}
+\title[Mini-Curso de Semigrupo]{Semigrupos de Operadores Limitados}
+\author[Luiz Viana/Reginaldo Demarque]{
+\vspace{-.5cm}
+\begin{equation*}
+{\normalsize {\color{blue} 
+\begin{cases}
+x'(t)={\color{red}A}x+{\color{black}f},& t\in [0,+\infty)\\
+x(0)=x_0
+\end{cases}}
+}
+\end{equation*}
+\begin{equation*}
+{\footnotesize {\color{blue} 
+x(t)=e^{t\color{red}A}x_0+\int_0^t e^{(t-s)\color{red}A}{\color{black}f(s)}ds}
+}
+\end{equation*}\\
+Prof. Luiz Viana e Prof. Reginaldo Demarque}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\logo{\includegraphics[scale=0.03]{UFF_brasao.png}}
+
+\institute[IMEUFF]{Universidade Federal Fluminense\\
+Instituto de Matemática e Estatística \\
+Programa de Pós-Graduação em Matemática \\
+}
+\date{{\color{orange} \today}}
+
+\frame{\titlepage}
+%%%%%%%%%%%%%%%%%%%%%%%%%% sumario  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{
+ \frametitle{Sumário}
+ \tableofcontents
+}
+
+\AtBeginSection[]
+{
+ \begin{frame}
+
+  \frametitle{Sumário}
+  \tableofcontents[currentsection]
+
+ \end{frame}
+}
+\include{bibliografia}
+\include{preliminares}
+\include{semigrupo-c0}
+
+\end{document}

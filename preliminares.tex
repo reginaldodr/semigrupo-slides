@@ -1,0 +1,65 @@
+\section{Prelimiares}
+
+\subsection*{Espaços Normados}
+
+\begin{frame}{Espaços Normados}
+\begin{defin}
+    Uma {\color{blue} norma} é
+\end{defin}
+\end{frame}
+
+\subsection*{Operadores Lineares Ilimitados}
+
+\begin{frame}{Operadores Lineares ilimitados}
+Sejam $X$ e $Y$ dois espaços de Banach. Seja $A:D(A)\subset X\longrightarrow Y$ um operador linear,  onde $D(A)$ é um subespaço de $X$, chamado de {\color{blue} domínio} de $A$.
+\medskip
+Dizemos que $A$ é {\color{blue}limitado (ou contínuo)} se $D(A)=X$ e se existe  $C>0$ tal que 
+\begin{equation}\label{ltdo}
+\|Ax\|_{Y}\leq C\|x\|_X, \ \forall x\in D(A).
+\end{equation}
+Denotaremos por $\mathcal{L}(X,Y)$ o espaço de Banach dos {\color{blue} operadores lineares limitados} com norma dada por
+\[\|A\|_{_{\mathcal{L}(X,Y)}}=\sup\limits_{x\in X, x\neq 0}\frac{\|Ax\|_{_Y}}{\|x\|_{_X}},\]
+por $\mathcal{L}(X)=\mathcal{L}(X,X)$ e $X'=\mathcal{L}(X,\R)$.
+$A$ é dito ser {\color{blue}ilimitado} quando não satisfaz \eqref{ltdo}. Dizemos que $A$ é {\color{blue}densamente definito} se $\overline{D(A)}=X$.
+\end{frame}
+
+\begin{frame}{ }
+\begin{exe}
+
+\end{exe}
+\begin{exer}
+Se $A,B\in \mathcal{L}(X)$ mostre que $A\cdot B\in \mathcal{L}(X)$ e 
+\[{\color{red}\|A\cdot B\|_{_{\mathcal{L}(X)}}\leq \|A\|_{_{\mathcal{L}(X)}}\|B\|_{_{\mathcal{L}(X)}} }\]
+\end{exer}
+\end{frame}
+
+\begin{frame}{}
+ Seja    
+\end{frame}
+
+
+\subsection*{Integral Vetorial}
+
+\begin{frame}{Integral Vetorial}
+\begin{defin}
+Sejam $X$ um espaço de Banach e $u:[a,b]\longrightarrow X$ uma aplicação tal que, para cada $\varphi\in X'$,  a função real
+\[t\in [a,b] \longmapsto \langle\varphi, u(t) \rangle_{X'X}\in \R,\]
+seja integrável. Dizemos que $u$ é integrável se existe {\color{blue} um vetor $v\in X$} que satisfaz:
+\[\langle \varphi, v\rangle_{X',X}=\int_a^b \langle\varphi, u(t) \rangle_{X'X}\,dt,\ \forall \varphi\in X'.\]
+Em caso afirmativo, $v$ é único e escrevemos
+\[v=\int_a^b u(t)\,dt.\]
+
+\end{defin}
+\end{frame}
+
+\begin{frame}{ }
+\begin{prop}
+Se $u:[a,b]\longrightarrow X$ é {\color{blue}contínua}, então $u$ é integrável. Além disso, 
+\begin{enumerate}
+    \item $\displaystyle\left\|\int_a^b u(t)\,dt\right\|\leq \int_a^b \|u(t)\|\,dt$
+    \item Se $A\in \mathcal{L}(X,Y)$, então
+    \[ A\left(\int_a^b u(t)\,dt\right)=\int_a^b A(u(t))\,dt. \]
+\end{enumerate}
+
+\end{prop}
+\end{frame}
