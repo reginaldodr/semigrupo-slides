@@ -6,7 +6,7 @@
 \usepackage{amsthm,amssymb}
 %\usepackage{graphicx}
 \usepackage{wrapfig}
-
+\usepackage[]{qrcode}
 \usepackage{color}
 
 \usepackage{multicol}
@@ -30,11 +30,12 @@
 \usepackage[labelformat=empty]{caption}
 \setbeamertemplate{caption}[numbered]{}
 
-
 \usetheme{Madrid}
+\usecolortheme{beaver}
+
 
 \setbeamertemplate{theorems}[numbered]
-
+\setbeamertemplate{enumerate items}[circle]
 \newtheorem{nada}{Nada}
 
 
@@ -109,14 +110,21 @@
 
 \newcommand{\cqd}{\hfill \framebox[7pt]{} \mbox{} \medskip}
 \newcommand{\R}{\mathbb{R}}
-
+\newcommand{\xo}{{\color{blue}x_0}}
+\newcommand{\id}{\operatorname{I}}
+\newcommand{\rA}{{\color{red}A}}
+\newcommand{\raa}{{\color{red}a}}
+\newcommand{\Xo}{{\color{blue}X_0}}
+\newcommand{\rT}{{\color{red}T}}
+\newcommand{\xxo}{{\color{blue}\mathbf{x_0}}}
+\newcommand{\dt}[1]{{\color{blue}#1}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
 
 %\setbeamercovered{transparent}
-\title[Mini-Curso de Semigrupo]{Semigrupos de Operadores Limitados}
+\title[Minicurso sobre EDOs em Espaços de Banach]{Minicurso EDOs em Espaços de Banach}
 \author[Luiz Viana/Reginaldo Demarque]{
 \vspace{-.5cm}
 \begin{equation*}
@@ -136,13 +144,13 @@ Prof. Luiz Viana e Prof. Reginaldo Demarque}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\logo{\includegraphics[scale=0.03]{UFF_brasao.png}}
+\logo{\includegraphics[scale=0.05]{UFF_brasao.png}}
 
 \institute[IMEUFF]{Universidade Federal Fluminense\\
 Instituto de Matemática e Estatística \\
 Programa de Pós-Graduação em Matemática \\
 }
-\date{{\color{orange} \today}}
+\date{{\color{orange} 12 à 21 de fevereiro de 2025}}
 
 \frame{\titlepage}
 %%%%%%%%%%%%%%%%%%%%%%%%%% sumario  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -161,8 +169,10 @@ Programa de Pós-Graduação em Matemática \\
 
  \end{frame}
 }
+\include{apresentacao}
 \include{bibliografia}
 \include{preliminares}
+\include{exponencial}
 \include{semigrupo-c0}
 
 \end{document}

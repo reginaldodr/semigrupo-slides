@@ -1,65 +1,212 @@
-\section{Prelimiares}
+\section{Espaços de Banach}
 
 \subsection*{Espaços Normados}
 
 \begin{frame}{Espaços Normados}
 \begin{defin}
-    Uma {\color{blue} norma} é
+    Seja $X$ um $\mathbb K$-espaço vetorial. Uma aplicação
+    \[
+    \displaystyle \| \cdot \|: X\longrightarrow \R
+    \]
+    é dita uma {\color{blue} norma} se, para quaisquer $x,y\in X$ e $\lambda \in \mathbb K$, as seguintes condições se verificarem:
+    \begin{enumerate}[(a)]
+    \item $\|x\|\geq 0$;
+    \item Se $\|x\|=0$, então $x=0$;
+    \item $\|\lambda x\|=|\lambda| \|x\|$;
+    \item $\|x+y\|\leq \|x\|+\|y\|$.
+    \end{enumerate}
+    Nesse caso, o par $(X,\|\cdot\|)$ é dito um \dt{espaço normado} \index{Espaço!normado}.
 \end{defin}
 \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \begin{frame}{Exemplos}
+% \begin{enumerate}[a]
+% \item $\mathbb{K}^n$ é um espaço normado com a norma:
+% \[\displaystyle \|\cdot \|_0 : (x_1,\cdots , x_n) \in \mathbb K^n \longmapsto \bigg( \sum_{j=1}^{n} |x_j|^2\bigg)^{1/2} \in \R \]
 
-\subsection*{Operadores Lineares Ilimitados}
+% \item  O espaço das matrizes $m\times n$, denotado por $\mathcal M _{m\times n} (\mathbb K )$, é um espaço normado, considerando a norma
+% \[
+% \displaystyle \|A\|=\bigg( \sum_{j,k=1}^{n} |a_{jk}|^2\bigg)^{1/2},
+% \]
+% definida para cada $A=[a_{jk}]_{m\times n}\in \mathcal M _{m\times n} (\mathbb K )$. Na verdade, $\mathcal M _{m\times n} (\mathbb K )$ é um espaço de Banach se considerarmos qualquer outra norma ({\color{red} Exercício!}).    
 
-\begin{frame}{Operadores Lineares ilimitados}
-Sejam $X$ e $Y$ dois espaços de Banach. Seja $A:D(A)\subset X\longrightarrow Y$ um operador linear,  onde $D(A)$ é um subespaço de $X$, chamado de {\color{blue} domínio} de $A$.
-\medskip
-Dizemos que $A$ é {\color{blue}limitado (ou contínuo)} se $D(A)=X$ e se existe  $C>0$ tal que 
-\begin{equation}\label{ltdo}
-\|Ax\|_{Y}\leq C\|x\|_X, \ \forall x\in D(A).
-\end{equation}
-Denotaremos por $\mathcal{L}(X,Y)$ o espaço de Banach dos {\color{blue} operadores lineares limitados} com norma dada por
-\[\|A\|_{_{\mathcal{L}(X,Y)}}=\sup\limits_{x\in X, x\neq 0}\frac{\|Ax\|_{_Y}}{\|x\|_{_X}},\]
-por $\mathcal{L}(X)=\mathcal{L}(X,X)$ e $X'=\mathcal{L}(X,\R)$.
-$A$ é dito ser {\color{blue}ilimitado} quando não satisfaz \eqref{ltdo}. Dizemos que $A$ é {\color{blue}densamente definito} se $\overline{D(A)}=X$.
+% \item Denotemos por $\mathcal B (A)$ o conjunto de todas as funções limitadas $f: A\longrightarrow \mathbb K$.
+% \[
+% \displaystyle f\in \mathcal B (A) \longmapsto \| f\| = \sup_{x\in A} |f(x)| \in \R
+% \]
+% \end{enumerate}
+% \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Sequências em Espaços Normados}
+\begin{defin}
+ Sejam $X$ um espaço normado. Dizemos que uma sequência  $x=(x_n)_{n=1}^{\infty}$  em $X$
+ %isto é, $x:\mathbb N \longrightarrow X$ é uma função que associa cada $n\in \mathbb N$ a um único $x_n \in X$. 
+%Dizemos que $x=(x_n)_{n=1}^{\infty}$ 
+\begin{enumerate}[(a)]
+    \item {\color{blue} converge} para $\raa\in X$ se, para cada $\varepsilon >0$, existir $n_0 \in \mathbb N$ de modo que
+    \begin{equation*}
+    n\in \mathbb N \text{ e } n\geq n_0 \Longrightarrow \|x_n-\raa\|< \varepsilon .
+\end{equation*}
+\item é {\color{blue} de Cauchy} se, para cada $\varepsilon >0$, existir $n_1 \in \mathbb N$ de modo que
+\begin{equation*}
+    m,n\in \mathbb N \text{ e } m,n\geq n_1 \Longrightarrow \|x_m-x_n\|< \varepsilon .
+\end{equation*}
+\end{enumerate}
+\end{defin}
 \end{frame}
-
-\begin{frame}{ }
-\begin{exe}
-
-\end{exe}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
 \begin{exer}
-Se $A,B\in \mathcal{L}(X)$ mostre que $A\cdot B\in \mathcal{L}(X)$ e 
-\[{\color{red}\|A\cdot B\|_{_{\mathcal{L}(X)}}\leq \|A\|_{_{\mathcal{L}(X)}}\|B\|_{_{\mathcal{L}(X)}} }\]
+    \begin{enumerate}[(a)]
+        \item Em um espaço normado $X$, mostre que toda sequência convergente é uma sequência de Cauchy;
+        \item Exiba um espaço normado $Y$ no qual exista uma  sequência de Cauchy que não converge em $Y$ ({\color{red} veja o Exemplo A.14 das Notas do Minicurso}).
+    \end{enumerate}
 \end{exer}
 \end{frame}
-
-\begin{frame}{}
- Seja    
-\end{frame}
-
-
-\subsection*{Integral Vetorial}
-
-\begin{frame}{Integral Vetorial}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Espaços de Banach}
 \begin{defin}
-Sejam $X$ um espaço de Banach e $u:[a,b]\longrightarrow X$ uma aplicação tal que, para cada $\varphi\in X'$,  a função real
-\[t\in [a,b] \longmapsto \langle\varphi, u(t) \rangle_{X'X}\in \R,\]
-seja integrável. Dizemos que $u$ é integrável se existe {\color{blue} um vetor $v\in X$} que satisfaz:
-\[\langle \varphi, v\rangle_{X',X}=\int_a^b \langle\varphi, u(t) \rangle_{X'X}\,dt,\ \forall \varphi\in X'.\]
-Em caso afirmativo, $v$ é único e escrevemos
-\[v=\int_a^b u(t)\,dt.\]
-
+    Um espaço normado $X$ é dito um {\color{blue} espaço de Banach} se toda sequência de Cauchy em $X$ convergir para um elemento de $X$.
 \end{defin}
 \end{frame}
-
-\begin{frame}{ }
-\begin{prop}
-Se $u:[a,b]\longrightarrow X$ é {\color{blue}contínua}, então $u$ é integrável. Além disso, 
-\begin{enumerate}
-    \item $\displaystyle\left\|\int_a^b u(t)\,dt\right\|\leq \int_a^b \|u(t)\|\,dt$
-    \item Se $A\in \mathcal{L}(X,Y)$, então
-    \[ A\left(\int_a^b u(t)\,dt\right)=\int_a^b A(u(t))\,dt. \]
-\end{enumerate}
-
-\end{prop}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Exemplos:}
+    \begin{enumerate}[a]
+        \item Para cada inteiro $n\geq 1$, $\mathbb K^n$ é um espaço de Banach, considerando a norma
+        \[
+        \displaystyle \|x\|_{0}=\bigg( \sum_{j=1}^{n} |x_j|^2\bigg)^{1/2},
+        \]
+        definida para cada $x=(x_1,\cdots ,x_n)\in \mathbb K^n$. Na verdade, $\mathbb K ^n$ é um espaço de Banach se considerarmos qualquer outra norma ({\color{red} Exercício!}).
+    \end{enumerate}
 \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+\begin{enumerate}[b]
+\item Dados dois inteiros positivos $m,n\in \mathbb N$, o espaço das matrizes $m\times n$, denotado por $\mathcal M _{m\times n} (\mathbb K )$, é um espaço de Banach, considerando a norma
+\[
+\displaystyle \|A\|=\bigg( \sum_{j=1}^{m} \sum_{k=1}^{n}
+|a_{jk}|^2\bigg)^{1/2},
+\]
+definida para cada $A=[a_{jk}]_{m\times n}\in \mathcal M _{m\times n} (\mathbb K )$. Na verdade, $\mathcal M _{m\times n} (\mathbb K )$ é um espaço de Banach se considerarmos qualquer outra norma ({\color{red} Exercício!}).        
+\end{enumerate}    
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}
+%\begin{enumerate}[c]
+%\item Dados dois inteiros positivos %$m,n\in \mathbb N$, o espaço das %{\color{red} transformações lineares} de $\mathbb R ^m$ em $\mathbb R^n$, denotado por $\mathcal L (\mathbb R^m; \mathbb R^n)$, é um espaço de Banach, considerando a norma
+%\[
+%\displaystyle \|T\|=\sup_{x\neq 0} %\frac{\|T(x)\|}{\|x\|},
+%\]
+%definida para cada $T\in \mathcal L (\mathbb R^m ; \mathbb R^n)$. Na verdade, $\mathcal M _{m\times n} (\mathbb K )$ é um espaço de Banach se considerarmos qualquer outra norma ({\color{red} Exercício!}).        
+%\end{enumerate}    
+%\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Aplicações Contínuas}
+\begin{defin}
+    Sejam $X$ e $Y$ dois espaços normados. Dizemos que uma função $f:X\longrightarrow Y$ é contínua em $a\in X$ se, para cada $\varepsilon >0$, existir $\delta >0$ tal que
+\[
+x\in X \text{ e } \|x-a\|_X <\delta \Longrightarrow \|f(x) - f(a)\|_Y < \varepsilon .
+\]
+\end{defin}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Aplicações Lineares Contínuas}
+\begin{defin}
+     Sejam $X$ e $Y$ dois espaços normados. Denotaremos por $\mathcal L (X,Y)$ o espaço vetorial de todas as {\color{blue} aplicações lineares e contínuas} de $X$ em $Y$, com as operações de adição e multiplicação por escalar definidas pontualmente. Cabe observar que:
+    \begin{enumerate}[(a)]
+    \item Quando $X=Y$, escreveremos {\color{red} $\mathcal L (X)$} em vez de $\mathcal L (X,X)$;
+    \item Quando $Y=\mathbb K$, denotaremos $\mathcal L (X,\mathbb K)$ por {\color{red} $X'$}, que é conhecido como \dt{o dual topológico} \index{dual topológico} de X;
+    \item O conjunto de todos os funcionais lineares $\varphi : X\longrightarrow \mathbb K$, contínuos ou não, será denotado por {\color{red} $X^{\ast}$}, que é conhecido como \dt{o dual algébrico} \index{dual algébrico} de X {\color{red} (veja o Apêndice A.3 das Notas do Minicurso).}
+    \end{enumerate}
+\end{defin}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Aplicações Lineares Limitadas}
+Dados dois espaços normados $X$ e $Y$, e uma aplicação linear $T:X\longrightarrow Y$, temos a seguinte equivalência:
+{\color{red}
+\[
+\displaystyle T \text{ é contínua } \Longleftrightarrow \sup_{x\neq 0} \frac{\|T(x)\|_Y}{\|x\|_X} <+\infty.
+\]
+}
+\begin{defin}
+    Sejam $X$ e $Y$ dois espaços normados. Uma aplicação linear $T:X \longrightarrow Y$ é dita {\color{blue} limitada} 
+se 
+\begin{equation}\label{ltdo}
+\sup_{x\neq 0} \frac{\|T(x)\|_Y}{\|x\|_X} 
+<\infty.
+\end{equation}
+Em outras palavras, {\color{red} uma aplicação linear é limitada se, e somente se, é contínua.}
+\end{defin}
+
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Exemplo:}
+Dados dois espaços normados $X$ e $Y$, a aplicação
+\[
+\displaystyle T\in \mathcal L (X;Y) \longmapsto \sup_{x\neq 0} \frac{\|T(x)\|_Y}{\|x\|_X} \in \mathbb R
+\]
+é uma {\color{red} norma em $\mathcal L (X;Y)$}, denotada por $\|T\|_{\mathcal{L}(X;Y)}$. Em particular, 
+\[\|T(x)\|_Y\leq \|T\|_{\mathcal{L}(X;Y)} \|x\|_X\]
+
+
+
+É conhecido que
+\begin{center}
+\begin{minipage}{0.7\textwidth}
+\begin{block}{}
+{\color{blue}$\mathcal{L} (X;Y)$ {é um espaço de Banach} $\Longleftrightarrow Y$ {é um espaço de Banach}.}
+\end{block}
+\end{minipage}
+\end{center}
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{frame}
+%\begin{enumerate}[e]
+%\item Denotemos por $\textbf{c}_{00}$ o $\mathbb K$-espaço vetorial de todas as sequências $(x_n)_{n=1}^{\infty}$ em $\mathbb K$ que possuem a seguinte propriedade: existe um inteiro positivo $n_0$ tal que $x_n=0$ para todo $n\geq n_0$. Considerando a norma
+%\[
+%\displaystyle \|x\| = \max_{j\in %\mathbb N} |x_j|,
+%\]
+%definida para cada $x=%(x_j)_{j=1}^{\infty} \in \textbf{c}_{00}$, temos um exemplo de um {\color{blue} espaço normado que não é um espaço de Banach} ({\color{red} Veja o Exemplo A.14 das Notas do Minicurso}).
+%\end{enumerate}
+%\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \subsection*{Operadores Lineares Ilimitados}
+
+% \begin{frame}{Operadores Lineares ilimitados}
+% Sejam $X$ e $Y$ dois espaços de Banach. Seja $A:D(A)\subset X\longrightarrow Y$ um operador linear,  onde $D(A)$ é um subespaço de $X$, chamado de {\color{blue} domínio} de $A$.
+% \medskip
+% Dizemos que $A$ é {\color{blue}limitado (ou contínuo)} se $D(A)=X$ e se existe  $C>0$ tal que 
+% \begin{equation}\label{ltdo}
+% \|Ax\|_{Y}\leq C\|x\|_X, \ \forall x\in D(A).
+% \end{equation}
+% Denotaremos por $\mathcal{L}(X,Y)$ o espaço de Banach dos {\color{blue} operadores lineares limitados} com norma dada por
+% \[\|A\|_{_{\mathcal{L}(X,Y)}}=\sup\limits_{x\in X, x\neq 0}\frac{\|Ax\|_{_Y}}{\|x\|_{_X}},\]
+% por $\mathcal{L}(X)=\mathcal{L}(X,X)$ e $X'=\mathcal{L}(X,\R)$.
+% $A$ é dito ser {\color{blue}ilimitado} quando não satisfaz \eqref{ltdo}. Dizemos que $A$ é {\color{blue}densamente definito} se $\overline{D(A)}=X$.
+% \end{frame}
+
+%\subsection*{Integral Vetorial}
+%
+%\begin{frame}{Integral Vetorial}
+%\begin{defin}
+%Sejam $X$ um espaço de Banach e $u:[a,b]\longrightarrow X$ uma aplicação tal que, para cada $\varphi\in X'$,  a função real
+%\[t\in [a,b] \longmapsto \langle\varphi, u(t) \rangle_{X'X}\in \R,\]
+%seja integrável. Dizemos que $u$ é integrável se existe {\color{blue} um vetor $v\in X$} que satisfaz:
+%\[\langle \varphi, v\rangle_{X',X}=\int_a^b \langle\varphi, u(t) \rangle_{X'X}\,dt,\ \forall \varphi\in X'.\]
+%Em caso afirmativo, $v$ é único e escrevemos
+%\[v=\int_a^b u(t)\,dt.\]
+%
+%\end{defin}
+%\end{frame}
+%
+%\begin{frame}{ }
+%\begin{prop}
+%Se $u:[a,b]\longrightarrow X$ é {\color{blue}contínua}, então $u$ é integrável. Além disso, 
+%\begin{enumerate}
+%    \item $\displaystyle\left\|\int_a^b u(t)\,dt\right\|\leq \int_a^b \|u(t)\|\,dt$
+%    \item Se $A\in \mathcal{L}(X,Y)$, então
+%    \[ A\left(\int_a^b u(t)\,dt\right)=\int_a^b A(u(t))\,dt. \]
+%\end{enumerate}
+%
+%\end{prop}
+%\end{frame}

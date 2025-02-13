@@ -1,0 +1,204 @@
+\section{Exponencial}
+
+\begin{frame}{A função exponecial}
+A função {\color{blue}logaritmo natural} é a bijeção contínua (com inversa contínua), definida por
+\[
+\displaystyle \log : x\in (0,+\infty ) \longmapsto \int_{1}^{x}\frac{1}{t}\,dt  \in \mathbb \R.
+\]
+
+A inversa de $\log :(0,+\infty ) \longrightarrow \mathbb R$ é a função exponencial $\exp :\mathbb R \longrightarrow (0,+\infty)$, e usualmente escrevemos 
+\[
+\displaystyle e^{x} :=\exp(x) \text{  para cada } x\in \mathbb R.
+\]
+Cabe recordar que:
+\begin{itemize}
+\item $e^{0}=1$;
+\item $e^{x+y} = e^x \cdot e^{y}$ para quaisquer $x,y\in \mathbb R$;
+\item $(e^x)' = e^x$ para todo $x\in \mathbb R$. 
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Solução do PVI}
+Dados ${\color{red}a}\in \mathbb R$ e ${\color{blue}x_0} \in \mathbb R$, podemos constatar que a única função $x:[0,+\infty) \longrightarrow \mathbb R$ solução do \textbf{problema de valor inicial}
+\[
+\begin{cases}
+    x'(t)={\color{red}a}x,\ t\in [0,+\infty);\\
+    x(0)={\color{blue}x_0},
+\end{cases}
+\]
+é dada por $x(t)={\color{blue}x_0}e^{{\color{red}a}t}$.
+\end{frame}
+
+\begin{frame}{Propriedades das Soluções}
+Denotando $x(t)=S(t){\color{blue}x_0}$, fazemos as seguintes considerações:
+\begin{enumerate}[a]
+\item Para cada $t\in \R$, 
+\[
+\displaystyle S(t):\hspace{-.5cm} \underbrace{\color{blue}x_0}_{\text{dado inicial}}
+\hspace{-.5cm} \in \R \longmapsto \underbrace{S(t){\color{blue}x_0}}_{\text{Solução do PVI}}\hspace{-0.5cm} \in \R
+\]
+é uma {\color{blue}função linear}.
+
+\item $S(0){\color{blue}x_0} = x(0)={\color{blue}x_0}$, para cada ${\color{blue}x_0}$ fixado em $\mathbb R$, ou seja, $S(0)$ é exatamente a função identidade $\id:x\in \R \longmapsto x\in \R$;
+
+\item Fixados $t,s\in [0,+\infty)$ e $\xo \in \R$, temos
+\begin{equation*}
+\displaystyle S(t+s)\xo = S(t) S(s)\xo.
+\end{equation*}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Sistema de Equações}
+Dada uma matriz $\rA$ em $\mathcal M _{n\times n} (\mathbb R )$ considere o sistema de EDOs
+\[
+    X'(t)=\rA X,\ t\in [0,+\infty),
+\]
+isto é,
+\[
+\begin{bmatrix}
+x_1'(t)\\ x_2'(t)\\ \vdots \\ x_n'(t)
+\end{bmatrix}
+={\color{red}\begin{bmatrix}
+a_{11} & a_{13} & \cdots & a_{1n}\\
+a_{21} & a_{23} & \cdots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{n1} & a_{n3} & \cdots & a_{nn}
+\end{bmatrix}}
+\begin{bmatrix}
+x_1(t)\\ x_2(t)\\ \vdots \\ x_n(t)
+\end{bmatrix}
+\]
+
+\end{frame}
+
+
+\begin{frame}{Sistema de Equações}
+Dada uma matriz $\rA$ em $\mathcal M _{n\times n} (\mathbb R )$ considere o PVI
+\[
+\begin{cases}
+    X'(t)=\rA X,\ t\in [0,+\infty);\\
+    X(0)=\Xo \in \mathcal M_{n\times 1} (\R ),
+\end{cases}
+\]
+A solução procurada é um caminho 
+\[
+X: [0,+\infty) \longrightarrow   \mathcal M _{n\times 1} (\R ).
+\]
+Em analogia ao caso unidimensional
+\[
+X(t)=e^{t\rA}\Xo 
+\]
+\end{frame}
+
+
+\begin{frame}{Exponencial de Matrizes}
+Recordemos que a norma em $\mathcal M_{n\times n} (\R)$ é dada por
+\[
+\|\rA\|=\bigg( \sum_{i,j=1}^{n} |\raa_{ij}|^2 \bigg)^{1/2}
+\]
+para cada $\rA=[\raa_{ij}]_{i,j=1}^{n} \in \mathcal M_{n\times n} (\R)$. 
+
+\begin{definition}\label{expmatrix}
+    Seja $\rA\in \mathcal M_{n\times n} (\R)$. A {\color{blue}exponencial de} $\rA$ é dada por
+    \begin{equation}\label{exp}
+    \displaystyle e^{\rA}:=\sum_{j=0}^{\infty} \frac{\rA^j}{j!}=\id + \rA + \frac{1}{2}\rA^2+\frac{1}{3!}\rA^3+\cdots+\frac{1}{n!}\rA^n+\cdots . 
+    \end{equation}
+\end{definition}
+\end{frame}
+
+\begin{frame}
+  \begin{enumerate}[(a)]
+ \item A série de matrizes, dada em \eqref{exp}, é 
+{\color{blue}absolutamente convergente}, isto é,
+    \[
+    \displaystyle \sum_{j=0}^{\infty} \frac{\| \rA^j \|}{j!}
+    \]
+    é sempre uma série de números reais convergente.
+    \item $S(t)\Xo := e^{t\rA} \Xo$ a única solução do problema de valor inicial
+    \[
+\begin{cases}
+    X'(t)=\rA X,\ t\in [0,+\infty);\\
+    X(0)=\Xo \in \mathcal M_{n\times 1} (\R ),
+\end{cases}
+\]
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}
+
+\begin{enumerate}[c]
+    \item A aplicação $S(t): \mathcal M_{n\times 1} (\R) \longrightarrow \mathcal{M}_{n\times 1} (\R)$ possui propriedades análogas àquelas obtidas no caso unidimensional. Mais precisamente,
+    \begin{itemize}
+    \item Para cada $t\in [0,+\infty)$, $S(t)\in \mathcal L (\mathcal M_{n\times 1} (\R))$;
+    \item $S(0):\mathcal M_{n\times 1} (\R) \longrightarrow \mathcal M_{n\times 1} (\R)$ é o operador identidade;
+    \item Para quaisquer $t,s\in [0,+\infty)$, vale $S(t+s)=S(t)S(s)$.
+    \end{itemize}
+
+ \item Quantitativamente, resolver sistemas de equações diferenciais lineares requer identificar a matriz na forma canônica de Jordan similar a \( \rA \). Para uma análise do comportamento das soluções, a abordagem espectral de \( \rA \) é uma estratégia eficaz. (veja \cite{rirsch1974differential}). 
+   
+\end{enumerate}
+\end{frame}
+
+
+\subsection*{EDOs para operadores lineares}
+\begin{frame}{EDOs para operadores lineares}
+Parece natural pensar sobre a resolução e a análise do sistema de equações diferenciais
+\[
+\begin{cases}
+    \mathbf{x'}(t)=\rT(\mathbf{x}),\ t\in [0,+\infty);\\
+    \mathbf{x}(0)=\xxo \in X,
+\end{cases}
+\]
+onde $X$ é um espaço de Banach e $\rT\in \mathcal L (X)$.
+
+
+\end{frame}
+
+\begin{frame}
+
+\begin{definition}\label{expoperator}
+    Sejam $X$ um espaço de Banach e $\rT\in \mathcal L (X)$. A {\color{blue}exponencial} da $\rT$ é dada por
+    \begin{equation}\label{expt}
+    \displaystyle e^{\rT}:=\sum_{j=0}^{\infty} \frac{\rT^j}{j!},
+    \end{equation}
+    onde $\rT^0:=\id$ e $\rT^{n+1} := \rT\circ \rT^{n}$ para todo inteiro $n\geq 0$.
+\end{definition}
+
+\begin{itemize}
+\item Não é difícil constatar que a série que define $e^{\rT}$ 
+{\color{blue}converge absolutamente}.  
+
+\item Como $\mathcal L(X)$ é um espaço de Banach, 
+$e^{\rT}\in \mathcal{L}(X)$ encontra-se bem definida.
+
+\item Explorando a noção de {\color{blue}semigrupo uniformemente contínuo}, concluiremos, mais adiante, que $\mathbf{x} (t)=e^{t\rT}\xxo$ 
+é a única solução de
+\[
+\begin{cases}
+    \mathbf{x'}(t)=\rT(\mathbf{x}),\ t\in [0,+\infty);\\
+    \mathbf{x}(0)=\xxo \in X.
+\end{cases}
+\]
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+Neste minicurso, o principal objetivo é obter uma condição necessária e suficiente para que o problema
+\[
+\begin{cases}
+    \mathbf{x'}(t)=\rA(\mathbf{x}),\ t\in [0,+\infty);\\
+    \mathbf{x}(0)=\xxo \in X,
+\end{cases}
+\]
+possua solução, onde
+\begin{itemize}
+\item $X$ é um espaço de Banach.
+\item $\rA:D(\rA)\longrightarrow X$ é uma aplicação linear {\color{red} (não necessariamente limitada)} definida em um subespaço vetorial $D(A)$ de $X$.
+\end{itemize}
+
+Isto será garantido pelo  {\color{blue}Teorema de Hille-Yosida}, que representa um marco muito importante da teoria geral dos semigrupos.
+
+\end{frame}
+
+
